@@ -13,17 +13,17 @@ public class Pais {
     @Column(name = "id")
     private Long id;
     @Column(name = "pais")
-    private String nombre;
-    @Column(name = "codigoAlfa2")
+    private String pais;
+    @Column(name = "codigoalfa2")
     private String codigoAlfa2;
-    @Column(name = "codigoAlfa3")
+    @Column(name = "codigoalfa3")
     private String codigoAlfa3;
 
     public Pais(){}
 
-    public Pais(Long id, String nombre, String codigoAlfa2, String codigoAlfa3) {
+    public Pais(Long id, String pais, String codigoAlfa2, String codigoAlfa3) {
         this.id = id;
-        this.nombre = nombre;
+        this.pais = pais;
         this.codigoAlfa2 = codigoAlfa2;
         this.codigoAlfa3 = codigoAlfa3;
     }
@@ -36,12 +36,12 @@ public class Pais {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getPais() {
+        return pais;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public String getCodigoAlfa2() {

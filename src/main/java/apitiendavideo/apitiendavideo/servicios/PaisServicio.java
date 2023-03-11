@@ -21,5 +21,8 @@ public class PaisServicio implements IPaisServicio {
     public Pais obtener(Long id){
         return repositorio.findById(id).get();
     }
-    
+    @Override
+    public List <Pais> buscar(String nombre){
+        return repositorio.buscar(nombre);
+    }
 }

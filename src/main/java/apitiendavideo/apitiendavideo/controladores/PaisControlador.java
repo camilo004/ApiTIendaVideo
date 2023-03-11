@@ -27,4 +27,9 @@ public class PaisControlador {
     public Pais obtener(@PathVariable Long id){
         return servicio.obtener(id);
     }
+
+    @RequestMapping(value="/buscar/{nombre}", method = RequestMethod.GET)
+    public List<Pais>buscar(@PathVariable String nombre){
+        return servicio.buscar(nombre);
+    }
 }

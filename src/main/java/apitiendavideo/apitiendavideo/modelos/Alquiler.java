@@ -20,11 +20,11 @@ public class Alquiler {
     @ManyToOne
     @JoinColumn(name = "idtercero", referencedColumnName = "id")
     private Tercero tercero;
-    @Column(name = "fechaPrestamo")
+    @Column(name = "fechaprestamo")
     private Date fechaPrestamo;
     @Column(name = "plazo")
     private Long plazo;
-    @Column(name = "fechaDevolucion")
+    @Column(name = "fechadevolucion")
     private Date fechaDevolucion;
     @Column(name = "precio")
     private Float precio;

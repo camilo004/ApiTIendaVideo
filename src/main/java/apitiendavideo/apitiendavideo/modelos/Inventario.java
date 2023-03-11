@@ -19,7 +19,7 @@ public class Inventario {
     @ManyToOne
     @JoinColumn(name = "idtecnologia", referencedColumnName = "id")
     private Tecnologia tecnologia;
-    @Column(name = "fechaAdquisicion")
+    @Column(name = "fechaadquisicion")
     private Date fechaAdquisicion;
     @Column(name = "activo")
     private Long activo;

@@ -28,6 +28,10 @@ public class EmpresaControlador {
     public Empresa obtener(@PathVariable Long id){
         return servicio.obtener(id);
     }
+    @RequestMapping(value="/buscar/{nombre}", method = RequestMethod.GET)
+    public List<Empresa>buscar(@PathVariable String nombre){
+        return servicio.buscar(nombre);
+    }
 
     }
 
