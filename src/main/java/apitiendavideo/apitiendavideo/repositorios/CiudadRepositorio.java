@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import apitiendavideo.apitiendavideo.modelos.Empresa;
+import apitiendavideo.apitiendavideo.modelos.Ciudad;
 
 @Repository
-public interface EmpresaRepositorio extends JpaRepository<Empresa,Long>{
-    @Query("select e from Empresa e WHERE UPPER(e.nombre) like UPPER('%' || ?1 || '%')")
-    List<Empresa> buscar (String nombre);
+public interface CiudadRepositorio extends JpaRepository<Ciudad,Long> {
+    @Query("select c from Ciudad c WHERE UPPER(c.ciudad) like UPPER('%' || ?1 || '%')")
+    List<Ciudad> buscar (String nombre);
+    
 }

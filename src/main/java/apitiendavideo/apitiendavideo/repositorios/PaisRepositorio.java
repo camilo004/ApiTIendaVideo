@@ -10,6 +10,7 @@ import apitiendavideo.apitiendavideo.modelos.Pais;
 public interface PaisRepositorio extends JpaRepository<Pais,Long> {
 
 
-    @Query("select p from Pais p WHERE p.pais like '%' || ?1 || '%'")
+    @Query("select p from Pais p WHERE UPPER(p.pais) like UPPER('%' || ?1 || '%')")
+    
     List<Pais> buscar (String nombre);
 }

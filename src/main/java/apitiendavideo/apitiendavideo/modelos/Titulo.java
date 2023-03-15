@@ -11,8 +11,8 @@ public class Titulo {
     private Long id;
     @Column(name = "nombre")
     private String nombre;
-    @Column(name = "anio")
-    private long anio;
+    @Column(name = "año")
+    private int anio;
     @Column(name = "protagonistas")
     private String protagonistas;
     @Column(name = "productor")
@@ -28,7 +28,7 @@ public class Titulo {
     public Titulo(){}
 
 
-    public Titulo(Long id, String nombre, long anio, String protagonistas, String productor, String director,
+    public Titulo(Long id, String nombre, int anio, String protagonistas, String productor, String director,
             Empresa empresa, Float precio) {
         this.id = id;
         this.nombre = nombre;
@@ -56,11 +56,11 @@ public class Titulo {
         this.nombre = nombre;
     }
 
-    public long getAnio() {
+    public int getAnio() {
         return anio;
     }
 
-    public void setAnio(long anio) {
+    public void setAnio(int anio) {
         this.anio = anio;
     }
 
