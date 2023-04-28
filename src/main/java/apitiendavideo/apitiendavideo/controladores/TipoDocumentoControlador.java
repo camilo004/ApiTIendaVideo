@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.ITipoDocumentoServicio;
 import apitiendavideo.apitiendavideo.modelos.Tipodocumento;
-import apitiendavideo.apitiendavideo.servicios.ITipoDocumentoServicio;
 @RestController
 @RequestMapping("/documento")
 public class TipoDocumentoControlador {

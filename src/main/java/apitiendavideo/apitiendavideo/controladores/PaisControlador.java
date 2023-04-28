@@ -3,15 +3,14 @@ package apitiendavideo.apitiendavideo.controladores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.IPaisServicio;
 import apitiendavideo.apitiendavideo.modelos.Pais;
-import apitiendavideo.apitiendavideo.servicios.IPaisServicio;
 
 @RestController
 @RequestMapping("/paises")
@@ -42,14 +41,16 @@ public class PaisControlador {
 
     @RequestMapping(value = "/modificar", method = RequestMethod.PUT)
     public Pais modificarPais(@RequestBody Pais pais) {
-        if(servicio.obtener(pais.getId()) != null ){
-        return servicio.guardar(pais);
-        }else{
+        if (servicio.obtener(pais.getId()) != null) {
+            return servicio.guardar(pais);
+        } else {
             return null;
         }
     }
 
-   
-
+    @RequestMapping(value = "/eliminar/{id}", method = RequestMethod.DELETE)
+    public boolean eliminar(@PathVariable Long id) {
+        return servicio.borrar(id);
+    }
 
 }

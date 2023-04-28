@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+import apitiendavideo.apitiendavideo.interfaces.ITecnologiaServicio;
 import apitiendavideo.apitiendavideo.modelos.Tecnologia;
 import apitiendavideo.apitiendavideo.repositorios.TecnologiaRepositorio;
 @Service

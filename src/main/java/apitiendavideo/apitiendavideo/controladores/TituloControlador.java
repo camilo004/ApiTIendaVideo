@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.ITituloServicio;
 import apitiendavideo.apitiendavideo.modelos.Titulo;
-import apitiendavideo.apitiendavideo.servicios.ITituloServicio;
 @RestController
 @RequestMapping("/titulo")
 public class TituloControlador {

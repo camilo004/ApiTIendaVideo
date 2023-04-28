@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.ITecnologiaServicio;
 import apitiendavideo.apitiendavideo.modelos.Tecnologia;
-import apitiendavideo.apitiendavideo.servicios.ITecnologiaServicio;
 @RestController
 @RequestMapping("/tecnologia")
 public class TecnologiaControlador {

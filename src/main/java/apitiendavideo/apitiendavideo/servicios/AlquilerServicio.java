@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import apitiendavideo.apitiendavideo.interfaces.IAlquilerServicio;
 import apitiendavideo.apitiendavideo.modelos.Alquiler;
 import apitiendavideo.apitiendavideo.repositorios.AlquilerRepositorio;
 @Service

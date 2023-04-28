@@ -1,10 +1,11 @@
 package apitiendavideo.apitiendavideo.servicios;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-
+import apitiendavideo.apitiendavideo.interfaces.IPaisServicio;
 import apitiendavideo.apitiendavideo.modelos.Pais;
 import apitiendavideo.apitiendavideo.repositorios.PaisRepositorio;
 
@@ -37,8 +38,13 @@ public class PaisServicio implements IPaisServicio {
 
     @Override
     public boolean borrar(Long id) {
+        try{
         repositorio.deleteById(id);
         return true;
+        }
+        catch(Exception ex){
+        return false;
+        }
     }
 
 }

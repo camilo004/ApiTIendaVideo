@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 import apitiendavideo.apitiendavideo.modelos.Inventario;
 @Repository
 public interface InventarioRepositorio extends JpaRepository<Inventario,Long> {
-    @Query("select i from Inventario i WHERE UPPER(i.consecutivo) like UPPER('%' || ?1 || '%')")
+    @Query("SELECT i FROM Inventario i join i.titulo t WHERE t.nombre like '%' || ?1 || '%'")
     List<Inventario> buscar (String nombre);
 }

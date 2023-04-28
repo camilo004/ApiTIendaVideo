@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.IAlquilerServicio;
 import apitiendavideo.apitiendavideo.modelos.Alquiler;
-import apitiendavideo.apitiendavideo.servicios.IAlquilerServicio;
 @RestController
 @RequestMapping("/alquiler")
 public class AlquilerControlador {

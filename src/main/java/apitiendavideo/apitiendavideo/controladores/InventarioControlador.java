@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.IInventarioServicio;
 import apitiendavideo.apitiendavideo.modelos.Inventario;
-import apitiendavideo.apitiendavideo.servicios.IInventarioServicio;
 @RestController
 @RequestMapping("/inventario")
 public class InventarioControlador {

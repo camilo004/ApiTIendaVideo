@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.ICiudadServicio;
 import apitiendavideo.apitiendavideo.modelos.Ciudad;
-import apitiendavideo.apitiendavideo.servicios.ICiudadServicio;
+import apitiendavideo.apitiendavideo.modelos.Tercero;
 @RestController
 @RequestMapping ("/ciudad")
 
@@ -31,6 +33,30 @@ public class CiudadControlador {
         return servicio.buscar(nombre);
     }
 
+    @RequestMapping(value="/{nombre}/buscarclientes", method = RequestMethod.GET)
+    public List<Tercero>buscarClientes(@PathVariable String nombre){
+        return servicio.buscarClientes(nombre);
+    }
+     
+     
+    @RequestMapping(value = "/agregar", method = RequestMethod.POST)
+    public Ciudad crear(@RequestBody Ciudad ciudad) {
+        return servicio.guardar(ciudad);
+    }
+
+    @RequestMapping(value = "/modificar", method = RequestMethod.PUT)
+    public Ciudad modificarPais(@RequestBody Ciudad ciudad) {
+        if (servicio.obtener(ciudad.getId()) != null) {
+            return servicio.guardar(ciudad);
+        } else {
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/eliminar/{id}", method = RequestMethod.DELETE)
+    public boolean eliminar(@PathVariable Long id) {
+        return servicio.borrar(id);
+    }
 
     
 }

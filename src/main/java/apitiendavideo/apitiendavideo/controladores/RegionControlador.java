@@ -3,12 +3,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import apitiendavideo.apitiendavideo.interfaces.IRegionServicio;
 import apitiendavideo.apitiendavideo.modelos.Region;
-import apitiendavideo.apitiendavideo.servicios.IRegionServicio;
 @RestController
 @RequestMapping("/region")
 public class RegionControlador {
@@ -28,5 +29,23 @@ public class RegionControlador {
     @RequestMapping(value="/buscar/{nombre}", method = RequestMethod.GET)
     public List<Region>buscar(@PathVariable String nombre){
         return servicio.buscar(nombre);
+    }
+    @RequestMapping(value = "/agregar", method = RequestMethod.POST)
+    public Region crear(@RequestBody Region region) {
+        return servicio.guardar(region);
+    }
+
+    @RequestMapping(value = "/modificar", method = RequestMethod.PUT)
+    public Region modificarPais(@RequestBody Region region) {
+        if (servicio.obtener(region.getId()) != null) {
+            return servicio.guardar(region);
+        } else {
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/eliminar/{id}", method = RequestMethod.DELETE)
+    public boolean eliminar(@PathVariable Long id) {
+        return servicio.borrar(id);
     }
 }
